@@ -16,9 +16,33 @@ button {
     background-position: center;
     background-size: 25%;
     margin: 10px;
+    outline: none;
+    box-shadow: none;
 }
 
 button:focus, button:active, button:hover {
-    background-color: #478061;
-    border-color: #5fa87f;
+    background-color: #1a1a1a;
+    border-color: #478061;
+    outline: none;
+    box-shadow: none;
+}
+
+#lock {
+    background-image: image(url("/home/levi/.config/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/home/levi/.config/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/home/levi/.config/wlogout/icons/suspend.png"));
+}
+
+#reboot {
+    background-image: image(url("/home/levi/.config/wlogout/icons/reboot.png"));
+}
+
+#shutdown {
+    background-image: image(url("/home/levi/.config/wlogout/icons/shutdown.png"));
 }

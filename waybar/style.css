@@ -1,5 +1,5 @@
 * {
-    font-family: "JetBrainsMono Nerd Font";
+    font-family: "JetBrainsMono Nerd Font", "Noto Color Emoji";
     font-size: 13px;
 }
 
@@ -22,6 +22,43 @@ window#waybar {
 
 #clock, #network, #bluetooth, #battery, #pulseaudio, #backlight {
     color: #ffffff;
+}
+
+#workspaces button {
+    color: #ffffff;
+}
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0.55);
+    color: #ffffff;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+#workspaces button:hover {
+    background: rgba(71, 128, 97, 0.3);
+}
+
+#workspaces button.active {
+    background: rgba(71, 128, 97, 0.5);
+}
+
+#clock, #network, #bluetooth, #battery, #pulseaudio, #backlight, #custom-weather {
+    padding: 0 10px;
+    color: #ffffff;
+    transition: background-color 0.15s ease;
+}
+
+#clock:hover, #network:hover, #bluetooth:hover, #battery:hover, #pulseaudio:hover, #backlight:hover, #custom-weather:hover {
+    background: rgba(71, 128, 97, 0.25);
 }
 
 #workspaces button {

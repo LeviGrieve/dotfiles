@@ -4,7 +4,7 @@
     "height": 30,
 
     "modules-left": ["sway/workspaces"],
-    "modules-center": ["clock"],
+    "modules-center": ["clock", "custom/weather"],
     "modules-right": ["pulseaudio", "backlight", "network", "bluetooth", "battery"],
 
     "sway/workspaces": {
@@ -32,6 +32,13 @@
     "clock": {
         "format": "{:%I:%M %p}",
         "tooltip-format": "{:%A, %d %B %Y}"
+    },
+
+    "custom/weather": {
+    "exec": "~/.config/sway/scripts/weather-full.sh",
+    "interval": 1800,
+    "tooltip": false,
+    "on-click": "kitty -e sh -c 'curl -s wttr.in/Newcastle,AU; read -n1'"
     },
 
     "pulseaudio": {
