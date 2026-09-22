@@ -24,7 +24,7 @@ set $term kitty
     bindsym $mod+q kill
     floating_modifier $mod normal
     bindsym $mod+Shift+c reload
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec wlogout
 #
 # Moving around:
 #
@@ -115,7 +115,7 @@ bindsym $mod+r mode "resize"
     bindsym Print exec grim -g "$(slurp)" - | wl-copy
     bindsym Shift+Print exec grim - | wl-copy
 
-    bindsym $mod+d exec fuzzel
+    bindsym $mod+d exec ~/.config/sway/scripts/fuzzel-launch.sh
     bindsym $mod+Shift+w exec ~/.config/sway/scripts/cycle_wallpaper.sh
 
 ### Autostart
@@ -128,12 +128,15 @@ exec ~/.config/sway/scripts/battery-watch.sh
 exec ~/.config/sway/scripts/wifi-watch.sh
 exec ~/.config/sway/scripts/bluetooth-watch.sh
 exec kanshi
+exec blueman-applet
+
+
 
 
 #ScreenIdle
 exec swayidle -w \
-    timeout 300 'swaylock -f -c 000000 -k --font "JetBrainsMono Nerd Font" --indicator-radius 100 --indicator-thickness 7 --ring-color 478061 --line-color 000000 --inside-color 1a1a1a --key-hl-color 5fa87f --separator-color 333333 --text-color ffffff' \
+    timeout 300 'swaylock -f -c 000000 -k --indicator-radius 120 --indicator-thickness 10 --ring-color 478061 --ring-clear-color 478061 --ring-ver-color 5fa87f --ring-wrong-color ff4444 --line-color 000000 --line-clear-color 000000 --line-ver-color 000000 --line-wrong-color 000000 --inside-color 000000 --inside-clear-color 000000 --inside-ver-color 000000 --inside-wrong-color 000000 --key-hl-color 5fa87f --separator-color 000000 --text-color 478061 --text-clear-color 478061 --text-ver-color 5fa87f --text-wrong-color ff4444 --font "JetBrainsMono Nerd Font" --font-size 32' \
     timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
     before-sleep 'swaylock -f -c 000000'
 
-bindsym $mod+Escape exec swaylock -f -c 000000 --ring-color 478061 --inside-color 1a1a1a --text-color ffffff
+bindsym $mod+Escape exec swaylock -f -c 000000 -k --indicator-radius 120 --indicator-thickness 10 --ring-color 478061 --ring-clear-color 478061 --ring-ver-color 5fa87f --ring-wrong-color ff4444 --line-color 000000 --line-clear-color 000000 --line-ver-color 000000 --line-wrong-color 000000 --inside-color 000000 --inside-clear-color 000000 --inside-ver-color 000000 --inside-wrong-color 000000 --key-hl-color 5fa87f --separator-color 000000 --text-color 478061 --text-clear-color 478061 --text-ver-color 5fa87f --text-wrong-color ff4444 --font "JetBrainsMono Nerd Font" --font-size 32
