@@ -4,7 +4,7 @@
     "height": 30,
 
     "modules-left": ["sway/workspaces"],
-    "modules-center": ["clock", "custom/weather"],
+    "modules-center": ["clock", "custom/media-prev", "custom/media-playpause", "custom/media-title", "custom/media-next"],
     "modules-right": ["pulseaudio", "backlight", "network", "bluetooth", "battery"],
 
     "sway/workspaces": {
@@ -34,11 +34,32 @@
         "tooltip-format": "{:%A, %d %B %Y}"
     },
 
-    "custom/weather": {
-    "exec": "~/.config/sway/scripts/weather-full.sh",
-    "interval": 1800,
-    "tooltip": false,
-    "on-click": "kitty -e sh -c 'curl -s wttr.in/Newcastle,AU; read -n1'"
+    "custom/media-prev": {
+        "exec": "~/.config/sway/scripts/media-prev.sh",
+        "interval": 2,
+        "on-click": "playerctl previous",
+        "tooltip": false
+    },
+
+    "custom/media-playpause": {
+        "exec": "~/.config/sway/scripts/media-icon.sh",
+        "interval": 2,
+        "on-click": "playerctl play-pause",
+        "tooltip": false
+    },
+
+    "custom/media-title": {
+        "exec": "~/.config/sway/scripts/now-playing.sh",
+        "interval": 2,
+        "max-length": 40,
+        "tooltip": false
+    },
+
+    "custom/media-next": {
+        "exec": "~/.config/sway/scripts/media-next.sh",
+        "interval": 2,
+        "on-click": "playerctl next",
+        "tooltip": false
     },
 
     "pulseaudio": {

@@ -64,3 +64,8 @@ window#waybar {
 #workspaces button {
     color: #ffffff;
 }
+
+#custom-media-prev, #custom-media-playpause, #custom-media-title, #custom-media-next {
+    padding: 0 8px;
+    color: #ffffff;
+}
