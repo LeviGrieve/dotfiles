@@ -1,0 +1,63 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "backlight", "network", "bluetooth", "battery"],
+
+    "sway/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+        "HDMI-A-1:1": "1",
+        "HDMI-A-1:2": "2",
+        "HDMI-A-1:3": "3",
+        "HDMI-A-1:4": "4",
+        "HDMI-A-1:5": "5",
+        "DP-2:1": "1",
+        "DP-2:2": "2",
+        "DP-2:3": "3",
+        "DP-2:4": "4",
+        "DP-2:5": "5"
+    }
+},
+
+
+
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "tooltip-format": "{:%A, %d %B %Y}"
+    },
+
+    "pulseaudio": {
+        "format": "󰕾 {volume}%",
+        "format-muted": "󰖁 Muted",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+
+    "backlight": {
+        "format": "\uf185 {percent}%"
+    },
+
+    "network": {
+        "format-wifi": "\uf1eb",
+        "format-ethernet": "\uf6ff",
+        "format-disconnected": "\uf071",
+        "tooltip-format": "{ifname}: {ipaddr}",
+        "on-click": "nm-connection-editor"
+    },
+
+    "battery": {
+        "format": "\uf240 {capacity}%",
+        "format-charging": "\uf0e7 {capacity}%"
+    },
+
+    "bluetooth": {
+        "format": "\uf293",
+        "format-disabled": "\uf294",
+        "format-connected": "\uf293",
+        "on-click": "blueman-manager"
+    }
+}

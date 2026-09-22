@@ -1,0 +1,11 @@
+profile docked {
+    output eDP-1 disable
+    output DP-2 mode 1920x1080@75Hz position 0,0 transform 90
+    output HDMI-A-1 mode 1920x1080@75Hz position 1080,0 transform normal
+}
+
+profile laptop {
+    output eDP-1 enable
+    output HDMI-A-1 disable
+    output DP-2 disable
+}
