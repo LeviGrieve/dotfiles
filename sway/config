@@ -129,7 +129,7 @@ exec ~/.config/sway/scripts/wifi-watch.sh
 exec ~/.config/sway/scripts/bluetooth-watch.sh
 exec kanshi
 exec blueman-applet
-
+exec_always 'swaymsg rename workspace "1" to "eDP-1:1" 2>/dev/null'
 
 
 

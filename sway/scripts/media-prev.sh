@@ -1,4 +1,8 @@
 #!/bin/bash
 status=$(playerctl status 2>/dev/null)
-[ -z "$status" ] && exit 0
+
+if [ -z "$status" ] || [ "$status" = "Stopped" ]; then
+    exit 0
+fi
+
 printf '\uf048\n'
